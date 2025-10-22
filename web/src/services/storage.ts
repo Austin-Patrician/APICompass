@@ -8,12 +8,25 @@ export interface HistoryItem extends ValidationResult {
   key: string; // Masked key
 }
 
+// Fallback UUID generator for non-secure contexts
+const generateUUID = (): string => {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  // Fallback for HTTP contexts
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+
 export const saveToHistory = (result: ValidationResult, maskedKey: string): void => {
   try {
     const history = getHistory();
     const item: HistoryItem = {
       ...result,
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       key: maskedKey,
     };
 

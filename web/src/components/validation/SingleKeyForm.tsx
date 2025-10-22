@@ -6,7 +6,7 @@ import { ProviderBadge } from '@/components/common/ProviderBadge';
 import { useValidation } from '@/hooks/useValidation';
 import { detectProvider, maskKey } from '@/utils/providerDetector';
 import { saveToHistory } from '@/services/storage';
-import { Check, Key, Settings2, Sparkles } from 'lucide-react';
+import { Key, Settings2, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ResultCard } from './ResultCard';
 import type { ValidationResult } from '@/types/api.types';

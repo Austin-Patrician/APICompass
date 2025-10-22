@@ -16,7 +16,7 @@ import {
   EyeOff,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import type { BatchValidationResponse, ValidationResult } from '@/types/api.types';
+import type { BatchValidationResponse } from '@/types/api.types';
 
 interface BatchResultCardProps {
   result: BatchValidationResponse;
