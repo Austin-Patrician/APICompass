@@ -1,0 +1,19 @@
+# Ignore build outputs
+**/bin/
+**/obj/
+**/logs/
+
+# Ignore IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore data volumes
+redis-data/
+prometheus-data/
+grafana-data/
