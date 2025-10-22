@@ -1,0 +1,6 @@
+@APICompass.KeyChecker.API_HostAddress = http://localhost:5028
+
+GET {{APICompass.KeyChecker.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
